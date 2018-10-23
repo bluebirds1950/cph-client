@@ -56,8 +56,8 @@ class FlightsContainer extends  Component {
                         <TabPane tabId="1">
                             <Row>
                                 <Col sm="12">
-                                    <FlightsComponent
-                                    flights={this.props.flights.length > 0 || this.props.flights.arrivals}/>
+                                    <FlightsComponent type={'arrivals'}
+                                     {...this.props}/>
                                 </Col>
                             </Row>
                         </TabPane>
