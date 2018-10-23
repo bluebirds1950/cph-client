@@ -11,6 +11,7 @@ class FlightsContainer extends  Component {
         this.state = {
             activeTab: '1'
         };
+        this.props.loadFlights('departure');
     }
 
     toggle(tab) {
@@ -24,10 +25,11 @@ class FlightsContainer extends  Component {
     }
 
     componentWillMount(){
-        this.props.loadFlights('departure');
+
     }
 
     render() {
+        console.log('render !!!!!', this.props.flights)
         return(
             <div>
                 <h2 className='App'>Copenhagen Airport's Flights</h2>
@@ -54,14 +56,16 @@ class FlightsContainer extends  Component {
                         <TabPane tabId="1">
                             <Row>
                                 <Col sm="12">
-                                    <FlightsComponent {...this.props}/>
+                                    <FlightsComponent
+                                    flights={this.props.flights.length > 0 || this.props.flights.arrivals}/>
                                 </Col>
                             </Row>
                         </TabPane>
                         <TabPane tabId="2">
                             <Row>
                                 <Col sm="12">
-                                    <FlightsComponent {...this.props}/>
+                                    <FlightsComponent type={'departures'}
+                                    {...this.props}/>
                                 </Col>
                             </Row>
                         </TabPane>

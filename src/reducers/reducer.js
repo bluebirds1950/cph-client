@@ -11,8 +11,6 @@ const initialState = {
 export default function(state = initialState, action) {
     switch(action.type) {
         case LOAD_FLIGHT_SUCCEED:
-        console.log('in here', action, state)
-        console.log('creality check here !', {...state,error: false,flights: action.flights})
             return {
                 ...state,
                 error: false,

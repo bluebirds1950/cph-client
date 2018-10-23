@@ -2,6 +2,7 @@ import React from 'react';
 import FilterableTable from 'react-filterable-table';
 
 const FlightComponent = (props) => {
+    console.log("component props : ", props)
     const renderTime = (props) => {
         if (!props.value) {
             return null;
